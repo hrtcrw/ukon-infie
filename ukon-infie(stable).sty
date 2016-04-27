@@ -943,12 +943,14 @@
 %
 	\ifthenelse{\equal{#1}{\empty}}{}{\bigskip} %
 	\ifthenelse{\equal{\german}{1}} %
+	{\ifthenelse{\equal{\customnumberTask}{\empty}}
+        {\noindent\textbf{Aufgabe \thenumberTask: #2}}
+        {\noindent\textbf{Aufgabe \customnumberTask: #2}} } %
 	{
         \ifthenelse{\equal{\customnumberTask}{\empty}}
-        {\noindent\textbf{Aufgabe \thenumberTask: #2}}
-        {\noindent\textbf{Aufgabe \customnumberTask: #2}}
-    } %
-	{\noindent\textbf{Exercise \customnumberTask\thenumberTask: #2}} %
+        {\noindent\textbf{Exercise \thenumberTask: #2}}
+        {\noindent\textbf{Exercise \customnumberTask: #2}}
+} %
 	\ifnum\IsAdditional=0 %
 	\add@to@pointlist, %
 	\fi %
