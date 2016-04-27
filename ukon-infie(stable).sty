@@ -893,10 +893,10 @@
 	\ifthenelse{\equal{\a}{text}}{\edef\IsBubble{0}}{}
 	\ifthenelse{\equal{\a}{break}}{\edef\IsBreak{1}}{}
 	\ifthenelse{\equal{\a}{nobreak}}{\edef\IsBreak{0}}{}
-	\ifthenelse{\equal{\a}{num}}{\edef\labelText{\noexpand\arabic*)}}{}
-	\ifthenelse{\equal{\a}{rom}}{\edef\labelText{\noexpand\roman*)}}{}
-	\ifthenelse{\equal{\a}{Alph}}{\edef\labelText{\noexpand\Alph*)}}{}
-	\ifthenelse{\equal{\a}{Rom}}{\edef\labelText{\noexpand\Roman*)}}{}
+	\ifthenelse{\equal{\a}{num}}{\edef\labelText{(\noexpand\arabic*)}}{}
+        \ifthenelse{\equal{\a}{rom}}{\edef\labelText{(\noexpand\roman*)}}{}
+        \ifthenelse{\equal{\a}{Alph}}{\edef\labelText{(\noexpand\Alph*)}}{}
+        \ifthenelse{\equal{\a}{Rom}}{\edef\labelText{(\noexpand\Roman*)}}{}
 	\ifthenelse{\equal{\a}{none}}{\edef\labelText{}}{}
            \ifthenelse{\equal{\a}{col}}{\edef\IsMultiCol{1}\edef\ColNum{2}}{}
 	\ifthenelse{\equal{\a}{cols}}{\edef\IsMultiCol{1}\edef\ColNum{\bekommePunkte#2}}{}
@@ -928,7 +928,7 @@
 	\edef\IsAdditional{1}%
 	\edef\IsBubble{\gobalBubble}%
 	\edef\IsBreak{\globalBreak}%
-	\edef\labelText{\noexpand\alph*)}%
+        \edef\labelText{(\noexpand\alph*)}%
 	\edef\IsMultiCol{0}
 	\Arguments(#1) %
 	\stepcounter{numberTask} %
