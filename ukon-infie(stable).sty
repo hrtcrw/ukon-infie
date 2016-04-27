@@ -869,6 +869,7 @@
 \def\tempZpunkte{\empty}
 \def\temppunkte{\empty}
 \def\IsAdditional{\empty}
+\def\customnumberTask{\empty}
 \def\IsBubble{}
 \def\IsBreak{0}
 \def\labelText{}
@@ -886,6 +887,7 @@
 		\edef\IsAdditional{0}
 	}
 	{
+    \ifthenelse{\equal{\a}{n}}{\edef\customnumberTask{\bekommePunkte#2}}{}
 	\ifthenelse{\equal{\a}{top}}{\edef\topExercise{1}}{}
 	\ifthenelse{\equal{\a}{bottom}}{\edef\topExercise{0}}{}
 	\ifthenelse{\equal{\a}{additional}}{\edef\IsAdditional{1}}{}
@@ -941,8 +943,12 @@
 %
 	\ifthenelse{\equal{#1}{\empty}}{}{\bigskip} %
 	\ifthenelse{\equal{\german}{1}} %
-	{\noindent\textbf{Aufgabe \thenumberTask: #2}} %
-	{\noindent\textbf{Exercise \thenumberTask: #2}} %
+	{
+        \ifthenelse{\equal{\customnumberTask}{\empty}}
+        {\noindent\textbf{Aufgabe \thenumberTask: #2}}
+        {\noindent\textbf{Aufgabe \customnumberTask: #2}}
+    } %
+	{\noindent\textbf{Exercise \customnumberTask\thenumberTask: #2}} %
 	\ifnum\IsAdditional=0 %
 	\add@to@pointlist, %
 	\fi %
