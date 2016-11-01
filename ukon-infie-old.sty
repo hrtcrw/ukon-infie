@@ -728,7 +728,7 @@ auf (#2,#3)%
 {
 	\begin{center}
 	{
-		\Large\bf #1
+		\Large\textbf #1
 	}
 	\end{center}
 }
@@ -736,8 +736,8 @@ auf (#2,#3)%
 \newcommand{\header}
 {
 	{\footnotesize \parindent0em
-		{\sc Universität Konstanz}                \hfill \lecture\par
-		{\sc \fachbereich} \hfill \semester \par
+		{\textsc Universität Konstanz}                \hfill \lecture\par
+		{\textsc \fachbereich} \hfill \semester \par
 		\name \hfill \today\par
 		\ifthenelse{\equal{\german}{1}}{\Title{Lösung des \theexerciseNumber. Aufgabenblattes}}{\Title{Solution of \theexerciseNumber. Assignment}}
 	}
@@ -814,7 +814,7 @@ auf (#2,#3)%
 
 \newcommand{\points}[1]
 {
-	\mbox{\ } \hfill {\bf #1}
+	\mbox{\ } \hfill {\textbf #1}
 }
 
 \newcommand{\exerciseNumbering}[4][\empty]

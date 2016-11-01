@@ -522,7 +522,7 @@
    \fi
   #2\empty}
 
-\def\schoeneAusgabe{
+\def\textschoeneAusgabe{
 \ifx\pointsOfSheet\nullFl %
 	\ifx\adPointsOfSheet\nullFl %
 	\else %
@@ -616,7 +616,7 @@
 	\def\Text{\onlyTotalPoints}
 	\edef\TextEmpty{1}
 \else %
-	\schoeneAusgabe %
+	\textschoeneAusgabe %
 \fi %
 \settowidth{\ausgleich}{\Text}
 \setlength{\ausgleich}{\ausgleich/2 - 0.55cm}
@@ -786,14 +786,14 @@
 	\lfoot{#1}
 	\cfoot{\thepage\ \ifthenelse{\equal{\german}{1}}{von}{of} \pageref{LastPage}}
 	\rfoot{#2}
-	\rhead{\footnotesize \parindent0em\bf \colaborations}
+	\rhead{\footnotesize \parindent0em\textbf \colaborations}
 }
 
 \newcommand{\Title}[1]
 {
 	\begin{center}
 	{
-		\Large\bf #1
+		\Large\textbf #1
 	}
 	\end{center}
 }
@@ -801,8 +801,8 @@
 \newcommand{\header}
 {
 	{\footnotesize \parindent0em
-		\ifthenelse{\equal{\german}{1}}{\sc Universität \university}{\sc University of \university}                \hfill \lecture\par
-		\ifthenelse{\equal{\german}{1}}{\sc \fachbereich}{\sc \fachbereichen} \hfill \semester \par
+		\ifthenelse{\equal{\german}{1}}{\textsc Universität \university}{\textsc University of \university}                \hfill \lecture\par
+		\ifthenelse{\equal{\german}{1}}{\textsc \fachbereich}{\textsc \fachbereichen} \hfill \semester \par
 		\name \hfill \today\par
 		\ifnum\isAssignment=0%
 			\ifthenelse{\equal{\german}{1}}{\Title{Lösung des \theexerciseNumber. Aufgabenblattes}}{\Title{Solution of \theexerciseNumber. Assignment}}%
@@ -1027,7 +1027,7 @@
 
 \newcommand{\points}[1]
 {
-	\mbox{\ } \hfill {\bf #1}
+	\mbox{\ } \hfill {\textbf #1}
 }
 
 \newcommand{\questText}[1]{
